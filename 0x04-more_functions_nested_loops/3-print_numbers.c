@@ -1,18 +1,23 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * print_numbers - prints numbers 0 to 9
- * Return: void
+ * print_most_numbers - print numbers
+ *
+ * Return: Always 0.
  */
-
-void print_numbers(void)
+void print_most_numbers(void)
 {
-char c = '0';
 
-while (c <= '9')
+int i;
+
+i = 0;
+while (i < 10)
 {
-_putchar(c);
-c++;
+if (i != 2 && i != 4)
+{
+_putchar (i + '0');
 }
-_putchar('\n');
+i++;
+}
+
+_putchar ('\n');
 }
