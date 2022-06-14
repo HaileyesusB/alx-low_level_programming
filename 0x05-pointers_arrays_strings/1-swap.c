@@ -10,6 +10,7 @@
 
 void swap_int(int *a, int *b)
 {
+	set ff=unix
 	int c = 0;
 	c = *a;
 	*a = *b;
