@@ -1,17 +1,20 @@
 #include "main.h"
 
 /**
- * _memset - function that fills memory with a constant byte.
- * @s: pointer value
- * @b: char that contain the value to change
- * @n: size to change
- * Return: pointer with value update
+ * _memset - Fill memory with a constant byte
+ *
+ * @s: string to modify
+ * @b: char to replace string with
+ * @n: no of chars to be replaced
+ * Return: adress to modified string
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	while (n-- > 0)
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
 	{
-		s[n] = b;
+		*(s + i) = b;
 	}
 	return (s);
 }
