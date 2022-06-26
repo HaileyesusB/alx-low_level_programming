@@ -1,40 +1,56 @@
-#include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
-#include <string.h>
-
-
+#include <stdio.h>
+#include <ctype.h>
 
 /**
- * main - the main function
- * @argc: arguments count
- * @argv: argument vector
- * Return: always 0
+ * check - Function to its a digit.
+ * @str: char pointer of arguments
+ * Return:  bool
+ */
+bool check(char *str)
+{
+	int i = 0;
+
+	if (str[i] == '-')
+		i = 1;
+	for (; str[i] != '\0'; i++)
+	{
+		if (isdigit(str[i]) == 0)
+			return (false);
+	}
+	return (true);
+}
+
+/**
+ * main - Function to add all its arguments.
+ * @argc: the number of arguments supplied
+ * @argv: char [] of arguments
+ * Return:  of i
  */
 int main(int argc, char *argv[])
 {
-	long unsigned int i, j;
+	int a = 1;
 	int sum = 0;
 
-	if (argc == 1)
+	if (argc < 2)
 	{
-		puts("0");
+		printf("0\n");
 		return (0);
 	}
-
-	for (i = 1; i < (long unsigned int)argc; i++)
+	while (a < argc)
 	{
-		for (j = 0; j < strlen(argv[i]); j++)
+		if (check(argv[a]) == 1)
 		{
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-			{
-				puts("Error");
-				return (1);
-			}
+			sum += atoi(argv[a]);
 		}
-		sum += atoi(argv[i]);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+		a++;
 	}
-
-	printf("%d\n", sum);
-
+	printf("%i\n", sum);
 	return (0);
 }
