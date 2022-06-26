@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _atoi - looks for numbers of a string and converts
  * them into integers.

@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _strchr - function that copies memory area.
  * @s: pointer to change
