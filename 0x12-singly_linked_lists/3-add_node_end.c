@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <string.h>
 
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	char *dup;
